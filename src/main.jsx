@@ -1,8 +1,12 @@
 import { createRoot } from "react-dom/client";
+import { BrowserRouter } from 'react-router-dom';
 import App from "./App.jsx";
 import "./index.css";
 
-// In JavaScript, we don't use the '!' non-null assertion.
-// If you want to be extra safe, you can check if the element exists, 
-// but for a root file, this is standard:
-createRoot(document.getElementById("root")).render(<App />);
+// Wrap the application with BrowserRouter so react-router components
+// like <Link> and <Route> have the required Router context.
+createRoot(document.getElementById("root")).render(
+	<BrowserRouter>
+		<App />
+	</BrowserRouter>
+);
